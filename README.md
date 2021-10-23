@@ -69,20 +69,25 @@ Build the migration(s) in Knex inside the `data/migrations` folder using appropr
 Build an API inside the `api` folder with endpoints for:
 
 - [ ] `[POST] /api/resources`
+
   - Example of response body: `{"resource_id":1,"resource_name":"foo","resource_description":null}`
 
 - [ ] `[GET] /api/resources`
+
   - Example of response body: `[{"resource_id":1,"resource_name":"foo","resource_description":null}]`
 
 - [ ] `[POST] /api/projects`
+
   - Even though `project_completed` is stored as an integer, the API uses booleans when interacting with the client
   - Example of response body: `{"project_id":1,"project_name":"bar","project_description":null,"project_completed":false}`
 
 - [ ] `[GET] /api/projects`
+
   - Even though `project_completed` is stored as an integer, the API uses booleans when interacting with the client
   - Example of response body: `[{"project_id":1,"project_name":"bar","project_description":null,"project_completed":false}]`
 
 - [ ] `[POST] /api/tasks`
+
   - Even though `task_completed` is stored as an integer, the API uses booleans when interacting with the client
   - Example of response body: `{"task_id":1,"task_description":"baz","task_notes":null,"task_completed":false,"project_id:1}`
 
@@ -110,6 +115,10 @@ Build an API inside the `api` folder with endpoints for:
 Be prepared to demonstrate your understanding of this week's concepts by answering questions on the following topics. You might prepare by writing down your own answers before hand.
 
 1. Explain the difference between Relational Databases and SQL.
+   A relational database consists of multiple tables that relate to each other. Data is stored in a tabular format grouped into rows and columns similar to spreadsheets. SQL is a programming language that is used by relational datbases to manage the data.
 2. Why do tables need a Primary Key?
+   A primary key is a way to identify each entry in the database uniquely. It is most often represented as an auto-incrementing integer called id or [tablenameID].
 3. What is the name given to a table column that references the Primary Key on another table?
+   Foreign keys are a type of table field used for creating links between tables. Foreign keys are used to connect a record in one table to a record in a second table.
 4. What do we need in order to have a _many to many_ relationship between two tables?
+   An intermediary table is needed when dealing with a many to many relationship. the intermediary table holds the foreign keys that reference the primary key on the related tables.
