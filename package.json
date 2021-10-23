@@ -3,6 +3,13 @@
   "version": "0.0.1",
   "main": "index.js",
   "scripts": {
+    "start": "node index.js",
+    "server": "nodemon index.js",
+    "migrate": "knex migrate: latest",
+    "rollback": "knex migrate:rollback",
+    "reset": "npm run rollback && npm run migrate && npm run seed",
+    "cleanup": "knex seed:run --specific=01-cleanup.js",
+    "seed": "knex seed:run",
     "test": "cross-env NODE_ENV=testing jest --watchAll --verbose --runInBand --silent"
   },
   "repository": {
@@ -25,6 +32,7 @@
     "helmet": "^4.6.0",
     "knex": "^0.95.11",
     "morgan": "^1.10.0",
-    "sqlite3": "^5.0.2"
+    "sqlite3": "^5.0.2",
+    "start": "^5.1.0"
   }
 }
