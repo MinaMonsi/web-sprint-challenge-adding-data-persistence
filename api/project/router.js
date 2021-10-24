@@ -9,9 +9,13 @@ router.get('/:project_id', (req,res, next)=> {
     .catch(next)
 })
 
+router.post('/projects', (req,res,next)=>{
+    next()
+})
+
+//error handling router
 router.use((err, req, res, next) =>{//eslint-disable-line
     res.status(500).json({
-        customMessage: 'testing',
         message: err.message,
         stack: err.stack,
     })
