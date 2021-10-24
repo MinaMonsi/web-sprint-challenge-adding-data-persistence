@@ -1,4 +1,4 @@
-// do not make changes to this file
+// Update with your config settings.
 const sharedConfig = {
   client: 'sqlite3',
   useNullAsDefault: true,
@@ -9,11 +9,14 @@ const sharedConfig = {
 module.exports = {
   development: {
     ...sharedConfig,
-    connection: { filename: './data/database.db3' },
+    connection: { filename: './data/lambda.db3' },
     seeds: { directory: './data/seeds' },
-  },
-  testing: {
-    ...sharedConfig,
-    connection: { filename: './data/test.db3' },
-  },
-};
+    },
+    testing: {
+      ...sharedConfig,
+      connection: { filename: './data/test.db3' },
+    },
+  }   
+  
+
+

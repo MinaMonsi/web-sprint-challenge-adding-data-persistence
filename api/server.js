@@ -3,7 +3,7 @@ const express = require ("express");
 const projectRouter = require('./project/router');
 const server = express();
 
-//This will display the current time in the test endpoint when called
+//This will display the current time in the status endpoint when called
 const currentTime = new Date().toLocaleTimeString();
 
 
