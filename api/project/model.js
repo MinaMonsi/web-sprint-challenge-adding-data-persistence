@@ -1,10 +1,14 @@
 const db = require('../../data/dbConfig')
 
-function getProjectById(project_id){
-    return Promise.resolve(`Coding project Id ${project_id}`)
+function getProjectById(){
+    return db('projects');
 }
 
+async function addProject(project){
+    await db('projects').insert(project)
+}
 
 module.exports = {
-    getProjectById
+    getProjectById,
+    addProject
 }
